@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mildred Danis-Taylor | Author</title>
+<meta name="description" content="Author website mockup for Mildred Danis-Taylor and Danis Taylor Press.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cyan:#0ABFDF; --green:#5EE03A; --blue:#1C0DAA; --black:#0B0B0C; --ink:#111;
+    --paper:#F6F7F5; --muted:#5b5f63; --line:#d9dcdf;
+    --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+    --body:'Archivo', system-ui, sans-serif;
+    --wrap:min(1120px, 100% - 2.5rem);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:1.0625rem;line-height:1.6}
+  a{color:inherit}
+  .wrap{width:var(--wrap);margin-inline:auto}
+  .mock-flag{background:var(--green);color:var(--black);text-align:center;font-size:.8125rem;font-weight:700;padding:.4rem 1rem;letter-spacing:.04em}
+
+  header{background:var(--black);color:#fff;position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .brand span{font-family:var(--display);font-size:1.35rem;letter-spacing:.03em;text-transform:uppercase}
+  .brand span b{color:var(--cyan);font-weight:400}
+  nav ul{display:flex;gap:1.5rem;list-style:none;font-weight:500;font-size:.95rem}
+  nav a{text-decoration:none;opacity:.85}
+  nav a:hover,nav a:focus-visible{opacity:1;color:var(--green)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;border:2px solid transparent;transition:transform .15s ease, background .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-green{background:var(--green);color:var(--black)}
+  .btn-ghost{border-color:#fff;color:#fff}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-black{background:var(--black);color:#fff}
+  .btn-sm{padding:.5rem 1rem;font-size:.9rem}
+
+  .hero{background:var(--black);color:#fff;padding:4.5rem 0 5.5rem;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--cyan)}
+  .hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(3rem,7.5vw,6.2rem);margin:.8rem 0 1.2rem}
+  .hero h1 .outline{color:transparent;-webkit-text-stroke:2px var(--green)}
+  .hero h1 .cyan{color:var(--cyan)}
+  .hero p.lede{font-size:1.2rem;max-width:34ch;color:#d7dadd}
+  .hero .ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+
+  .cover{position:relative;aspect-ratio:2/3;max-width:330px;margin-inline:auto;width:100%}
+  .cover::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--cyan);border-radius:6px}
+  .cover-inner{position:relative;height:100%;background:linear-gradient(160deg,#1C0DAA 0%,#120870 100%);border-radius:6px;padding:1.6rem;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px rgba(0,0,0,.5);border-left:10px solid #0d0660}
+  .cover-inner .t{font-family:var(--display);text-transform:uppercase;font-size:2.4rem;line-height:1;color:#fff}
+  .cover-inner .t em{font-style:normal;color:var(--green)}
+  .cover-inner .a{font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--cyan)}
+  .cover-note{font-size:.75rem;color:#c9c6f2;border-top:1px solid rgba(255,255,255,.25);padding-top:.6rem}
+
+  section{padding:5rem 0}
+  .sec-head{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1;margin-bottom:1.5rem}
+
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:start}
+  .portrait{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e7e9ea 0 14px,#eef0f1 14px 28px);border:2px dashed #b9bec2;border-radius:8px;display:grid;place-items:center;color:var(--muted);font-weight:500;text-align:center;padding:1rem}
+  .about p+p{margin-top:1rem}
+  .about .pull{font-family:var(--display);text-transform:uppercase;font-size:1.6rem;line-height:1.15;color:var(--blue);border-left:6px solid var(--green);padding-left:1rem;margin:1.8rem 0}
+  .tag{display:inline-block;background:var(--black);color:#fff;font-size:.8rem;font-weight:700;padding:.3rem .7rem;border-radius:4px;margin-top:1.4rem}
+
+  .order{background:var(--cyan)}
+  .order .sec-head{color:var(--black)}
+  .order-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+  .card{background:#fff;border-radius:10px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;border:2px solid var(--black);box-shadow:6px 6px 0 var(--black)}
+  .card h3{font-size:1.15rem}
+  .card p{color:#33373a;font-size:.98rem;flex:1}
+  .order .intro{max-width:56ch;color:var(--black)}
+
+  .news{background:var(--black);color:#fff}
+  .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  .news .sec-head span{color:var(--green)}
+  .news p{color:#cfd3d6}
+  form.signup{display:flex;gap:.6rem;flex-wrap:wrap}
+  form.signup input{flex:1 1 220px;padding:.9rem 1rem;border-radius:999px;border:2px solid #fff;background:transparent;color:#fff;font:inherit}
+  form.signup input::placeholder{color:#9aa0a5}
+  .fine{font-size:.8125rem;color:#9aa0a5;margin-top:.7rem}
+
+  footer{background:#000;color:#cfd3d6;padding:2.2rem 0;font-size:.9rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .social{display:flex;gap:.6rem}
+  .social a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#1a1a1c;color:#fff;text-decoration:none}
+  .social a:hover{background:var(--green);color:#000}
+  .social svg{width:20px;height:20px}
+  :focus-visible{outline:3px solid var(--green);outline-offset:3px}
+
+  @media (max-width:860px){
+    .hero-grid,.about-grid,.news-grid{grid-template-columns:1fr}
+    .order-grid{grid-template-columns:1fr}
+    nav ul{display:none}
+    .hero{padding:3rem 0 4rem}
+    .cover{max-width:250px}
+    section{padding:3.5rem 0}
+  }
+</style>
+</head>
+<body>
+<div class="mock-flag">DESIGN MOCKUP — placeholder text and images, for review only</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Danis Taylor Press home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="6" fill="#0ABFDF"/>
+        <path d="M8 9h8a8 8 0 0 1 0 16H8z" fill="none" stroke="#0B0B0C" stroke-width="3"/>
+        <rect x="17" y="15" width="11" height="3" fill="#1C0DAA"/><rect x="21" y="15" width="3" height="11" fill="#1C0DAA"/>
+      </svg>
+      <span>Danis Taylor <b>Press</b></span>
+    </a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#book">The Book</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul></nav>
+    <a class="btn btn-green btn-sm" href="#order">Order Now</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="book">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">A memoir by Mildred Danis-Taylor</p>
+        <h1><span class="outline">15 months.</span><br><span class="cyan">One family.</span><br>Still standing.</h1>
+        <p class="lede">The true story of a wife who refused to look away while her husband was held in immigration detention — and the community that fought to bring him home.</p>
+        <div class="ctas">
+          <a class="btn btn-green" href="#order">Get the book</a>
+          <a class="btn btn-ghost" href="#about">Meet the author</a>
+        </div>
+      </div>
+      <div class="cover" role="img" aria-label="Placeholder book cover">
+        <div class="cover-inner">
+          <div class="a">Mildred Danis-Taylor</div>
+          <div class="t">[Book<br><em>Title</em><br>Here]</div>
+          <div class="cover-note">Placeholder — real cover art goes here</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="portrait">Author photo<br>(4:5 portrait)</div>
+      <div>
+        <h2 class="sec-head">About the author</h2>
+        <p>Mildred Danis-Taylor is a wife, mother, organizer, and now author. When her husband Rodney — a Georgia barber and double amputee — was detained by ICE and held at Stewart Detention Center, she became one of his loudest advocates, speaking with members of Congress, city councils, and anyone who would listen.</p>
+        <p class="pull">“Write a short quote from the book or from Mildred here.”</p>
+        <p>After more than 15 months, Rodney came home in May 2026. Her book tells what those months were really like — and what families facing detention need to know. Mildred works with the Black Alliance for Just Immigration (BAJI), building power for Black immigrants and their families.</p>
+        <span class="tag">Draft bio — Mildred to review and edit</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="wrap">
+      <h2 class="sec-head">Order the book</h2>
+      <p class="intro">Choose where you’d like to buy. Signed copies and bulk orders for organizations, book clubs, and events are available through the Danis Taylor Press shop.</p>
+      <div class="order-grid">
+        <div class="card">
+          <h3>Signed copy</h3>
+          <p>Order directly from the author through the Danis Taylor Press shop (Shopify).</p>
+          <a class="btn btn-black" href="#" aria-label="Buy signed copy on Shopify (placeholder link)">Shop on Shopify</a>
+        </div>
+        <div class="card">
+          <h3>Paperback &amp; Kindle</h3>
+          <p>Fast shipping and e-book options through Amazon.</p>
+          <a class="btn btn-blue" href="#" aria-label="Buy on Amazon (placeholder link)">Buy on Amazon</a>
+        </div>
+        <div class="card">
+          <h3>Bulk &amp; events</h3>
+          <p>Ordering for a group, classroom, or organization? Fill out a quick request form for bulk pricing or speaking.</p>
+          <a class="btn btn-black" href="#" aria-label="Bulk and event request form (placeholder link)">Request form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news" id="newsletter">
+    <div class="wrap news-grid">
+      <div>
+        <h2 class="sec-head">Stay <span>in the story</span></h2>
+        <p>Get book news, event dates, and first access to new releases from Danis Taylor Press. No spam — just updates worth opening.</p>
+      </div>
+      <div>
+        <form class="signup" onsubmit="event.preventDefault();this.querySelector('button').textContent='You’re on the list';">
+          <label for="email" class="sr" style="position:absolute;left:-9999px">Email address</label>
+          <input id="email" type="email" placeholder="Your email address" required>
+          <button class="btn btn-green" type="submit">Join the list</button>
+        </form>
+        <p class="fine">Mockup only. In the live site, this is a Google Form — sign-ups go straight into Mildred’s Google Sheet.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Danis Taylor Press · danistaylorpress.com</span>
+    <div class="social">
+      <a href="#" aria-label="Instagram (placeholder link)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="#" aria-label="Facebook (placeholder link)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
